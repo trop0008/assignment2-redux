@@ -4,7 +4,7 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-                <h1>My Todo List</h1>
+                <h1>Marjan's Todo List</h1>
             </div>
         )
     }

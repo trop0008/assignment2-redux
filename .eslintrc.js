@@ -16,9 +16,11 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "no-unused-vars": 0,
         "indent": [
             "error",
-            4
+            4,
+            { "SwitchCase": 1 }
         ],
         "linebreak-style": [
             "error",

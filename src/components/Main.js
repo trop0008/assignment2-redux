@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import Header from "./Header";
 import Todolist from "./Todolist";
 import AddNewTodo from "./AddNewTodo";
-
+import { connect } from "react-redux";
+import * as actions from "../actions";
+/*
 export default class Main extends Component {
     render() {
         return (
@@ -22,3 +24,16 @@ Main.propTypes = {
     addTodoValue: PropTypes.string,
     todoList: PropTypes.array.isRequired
 };
+*/
+
+export default class Main extends Component {
+    render() {
+        return (
+            <div>
+                <Header/>
+                <Todolist/>
+                <AddNewTodo/>
+            </div>
+        );
+    }
+}
