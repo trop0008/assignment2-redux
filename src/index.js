@@ -2,10 +2,15 @@
 require("./main.scss");
 
 import React from "react";
-import ReactDOM from 'react-dom';
+import { render } from "react-dom";
 import Main from "./components/Main";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducers from "./reducers";
+
 
 let state = {};
+/*
 function setState(changes) {
     state = Object.assign({}, state, changes);
 
@@ -48,3 +53,24 @@ setState({
         setState({todoList});
     }
 });
+*/
+
+state = {
+    todoList: [
+        {key: 1, id: 1, text: "Learn React", status: 1},
+        {key: 2, id: 2, text: "Learn Redux", status: 1},
+        {key: 3, id: 3, text: "Reduxify this app", status: 1},
+        {key: 4, id: 4, text: "Learn React Native", status: 0},
+        {key: 5, id: 5, text: "Get an A+ for HTML5", status: 0}
+    ],
+    addTodoValue: ""
+};
+
+let store = createStore(reducers, state);
+
+render(
+    <Provider store={store}>
+        <Main />
+    </Provider>,
+    document.getElementById("react-app")
+);
